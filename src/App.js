@@ -1,5 +1,5 @@
 import "./App.css";
-import About from "./components/About";
+// import About from "./components/About";
 import Navbar from "./components/Navbar";
 import TextForm from "./components/TextForm";
 import { useState } from "react";
@@ -65,7 +65,7 @@ function App() {
           />
 
           {/* ✅ ABOUT ROUTE */}
-          <Route path="/about" element={<About />} />
+          {/* <Route path="/about" element={<About />} /> */}
         </Routes>
       </div>
     </Router>
