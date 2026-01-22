@@ -7,24 +7,23 @@ import Alert from "./components/Alert";
 import { HashRouter as Router, Routes, Route } from "react-router-dom";
 
 function App() {
-  const [mode, setmode] = useState("light");
+  const [mode, setMode] = useState("light");
   const [textcolor, setTextcolor] = useState("text-dark");
   const [alert, setAlert] = useState(null);
-  const [mycolor, setMycolor] = useState("white");
 
   const showAlert = (message, type) => {
-    setAlert({ msg: message, type: type });
-    setTimeout(() => setAlert(null), 500);
+    setAlert({ msg: message, type });
+    setTimeout(() => setAlert(null), 1500);
   };
 
   const toggle = () => {
     if (mode === "light") {
-      setmode("dark");
+      setMode("dark");
       document.body.style.backgroundColor = "rgb(16 18 38)";
       setTextcolor("text-light");
       showAlert("Dark Mode Enabled", "success");
     } else {
-      setmode("light");
+      setMode("light");
       document.body.style.backgroundColor = "white";
       setTextcolor("text-dark");
       showAlert("Light Mode Enabled", "success");
@@ -32,15 +31,14 @@ function App() {
   };
 
   const resetAll = () => {
-    setmode("light");
+    setMode("light");
     setTextcolor("text-dark");
-    setMycolor("white");
-    setAlert(null);
     document.body.style.backgroundColor = "white";
   };
 
   return (
     <Router>
+      {/* ✅ Navbar ALWAYS visible */}
       <Navbar
         title="TextUtils"
         AboutTextutils="About"
@@ -53,8 +51,9 @@ function App() {
 
       <div className="container my-3">
         <Routes>
+          {/* ✅ HOME ROUTE */}
           <Route
-            path="/Home"
+            path="/"
             element={
               <TextForm
                 heading="Enter the text to analyze"
@@ -65,6 +64,7 @@ function App() {
             }
           />
 
+          {/* ✅ ABOUT ROUTE */}
           <Route path="/about" element={<About />} />
         </Routes>
       </div>
