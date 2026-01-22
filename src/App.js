@@ -10,6 +10,7 @@ function App() {
   const [mode, setMode] = useState("light");
   const [textcolor, setTextcolor] = useState("text-dark");
   const [alert, setAlert] = useState(null);
+  const [textlabel, settextlabel] = useState("Enable Dark Mode")
 
   const showAlert = (message, type) => {
     setAlert({ msg: message, type });
@@ -21,12 +22,13 @@ function App() {
       setMode("dark");
       document.body.style.backgroundColor = "rgb(16 18 38)";
       setTextcolor("text-light");
-      showAlert("Dark Mode Enabled", "success");
+      settextlabel("Disable Dark Mode")
+
     } else {
       setMode("light");
       document.body.style.backgroundColor = "white";
       setTextcolor("text-dark");
-      showAlert("Light Mode Enabled", "success");
+      settextlabel("Enable Dark Mode")
     }
   };
 
@@ -38,6 +40,7 @@ function App() {
         mode={mode}
         toggle={toggle}
         textcolor={textcolor}
+        textlabel={textlabel}
       />
 
       <Alert alert={alert} />

@@ -46,6 +46,7 @@ export default function Navbar(props) {
               role="switch"
             />
           </div>
+          <div className= {props.textcolor}>{props.textlabel}</div>
         </div>
       </div>
     </nav>
