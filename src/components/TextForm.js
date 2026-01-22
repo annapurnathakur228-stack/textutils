@@ -6,10 +6,7 @@ export default function TextForm(props) {
   let UPPERCASE = text.toUpperCase();
   let LOWERCASE = text.toLowerCase();
 
-  const reseteverything = () => {
-    setText("");
-    props.resetAll();
-  };
+
 
   const handleUpClick = () => {
     setText(UPPERCASE);
@@ -65,9 +62,7 @@ export default function TextForm(props) {
       <button onClick={copy} className="btn btn-primary mx-2 my-1">
         Copy To clipboard
       </button>
-      <button className="btn btn-primary" onClick={reseteverything}>
-        Reset
-      </button>
+
       <div className={`container my-2 ${props.textcolor}`}>
         <h2>Your text summary</h2>
         <p>

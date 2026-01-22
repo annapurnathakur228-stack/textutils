@@ -30,15 +30,8 @@ function App() {
     }
   };
 
-  const resetAll = () => {
-    setMode("light");
-    setTextcolor("text-dark");
-    document.body.style.backgroundColor = "white";
-  };
-
   return (
     <Router>
-      {/* ✅ Navbar ALWAYS visible */}
       <Navbar
         title="TextUtils"
         AboutTextutils="About"
@@ -59,7 +52,6 @@ function App() {
                 heading="Enter the text to analyze"
                 textcolor={textcolor}
                 showAlert={showAlert}
-                resetAll={resetAll}
               />
             }
           />
