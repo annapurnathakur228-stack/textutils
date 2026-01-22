@@ -33,7 +33,6 @@ export default function TextForm(props) {
   };
   const copy = () => {
     const textarea = document.getElementById("myBox");
-    textarea.select();
     navigator.clipboard.writeText(textarea.value);
     props.showAlert("Text has been Copied to Clipboard", "success");
   };
@@ -51,19 +50,19 @@ export default function TextForm(props) {
           onChange={handleonChange}
         ></textarea>
       </div>
-      <button className="btn btn-primary mx-2" onClick={handleUpClick}>
+      <button className="btn btn-primary mx-2 my-1" onClick={handleUpClick}>
         Convert to upperCase
       </button>
-      <button className="btn btn-primary mx-2" onClick={handlelowClick}>
+      <button className="btn btn-primary mx-2 my-1" onClick={handlelowClick}>
         Convert to LowerCase
       </button>
-      <button onClick={clear} className="btn btn-primary mx-2">
+      <button onClick={clear} className="btn btn-primary mx-2 my-1">
         Clear
       </button>
-      <button onClick={removeExtraSpaces} className="btn btn-primary mx-2">
+      <button onClick={removeExtraSpaces} className="btn btn-primary mx-2 my-1">
         Remove Extra Spaces
       </button>
-      <button onClick={copy} className="btn btn-primary mx-2">
+      <button onClick={copy} className="btn btn-primary mx-2 my-1">
         Copy To clipboard
       </button>
       <button className="btn btn-primary" onClick={reseteverything}>
@@ -73,7 +72,7 @@ export default function TextForm(props) {
         <h2>Your text summary</h2>
         <p>
           {
-            text.split(" ").filter((element) => {
+            text.split(/\s+/).filter((element) => {
               return element.length !== 0;
             }).length
           }{" "}

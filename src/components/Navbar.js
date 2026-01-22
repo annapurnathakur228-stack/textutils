@@ -32,13 +32,12 @@ export default function Navbar(props) {
               </Link>
             </li>
 
-            <li className="nav-item">
+            {/* <li className="nav-item">
               <Link className="nav-link" to="/about">
                 {props.AboutTextutils}
               </Link>
-            </li>
-          </ul>
-
+            </li>*/}
+          </ul> 
           <div className={`form-check form-switch ${props.textcolor}`}>
             <input
               className="form-check-input"
